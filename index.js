@@ -35,10 +35,11 @@ async function invokeAction({ action, id, name, email, phone }) {
 }
 
 // invokeAction({ action: "list" });
-invokeAction({ action: "remove", id: "a-Bga3LqQIuyyfer0ASai" });
-// invokeAction({
-//   action: "add",
-//   name: "Max",
-//   email: "max@google.com",
-//   phone: "111-11-11",
-// });
+// invokeAction({ action: "remove", id: "a-Bga3LqQIuyyfer0ASai" });
+invokeAction({
+  action: "add",
+
+  name: "Reuben Henry",
+  email: "pharetra.ut@dictum.co.uk",
+  phone: "(715) 598-5792",
+});
