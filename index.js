@@ -1,15 +1,5 @@
-// import { program } from "commander";
 const contacts = require("./contacts");
-// program
-//   .option("-a, --action <type>", "choose action")
-//   .option("-i, --id <type>", "user id")
-//   .option("-n, --name <type>", "user name")
-//   .option("-e, --email <type>", "user email")
-//   .option("-p, --phone <type>", "user phone");
-
-// program.parse();
-
-// const options = program.opts();
+const { program } = require("commander");
 
 async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
@@ -34,12 +24,15 @@ async function invokeAction({ action, id, name, email, phone }) {
   }
 }
 
-// invokeAction({ action: "list" });
-// invokeAction({ action: "remove", id: "a-Bga3LqQIuyyfer0ASai" });
-invokeAction({
-  action: "add",
+program
+  .option("-a, --action <type>", "choose action")
+  .option("-i, --id <type>", "user id")
+  .option("-n, --name <type>", "user name")
+  .option("-e, --email <type>", "user email")
+  .option("-p, --phone <type>", "user phone");
 
-  name: "Reuben Henry",
-  email: "pharetra.ut@dictum.co.uk",
-  phone: "(715) 598-5792",
-});
+program.parse();
+
+const options = program.opts();
+
+invokeAction(options);
